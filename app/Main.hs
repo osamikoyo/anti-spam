@@ -2,7 +2,6 @@ module Main where
 
 import Data.Char (isAlpha, isSpace)
 import Data.List (isPrefixOf)
-import Foreign.C (CBool (CBool))
 
 cleanText :: [Char] -> [Char]
 cleanText = filter (\c -> isAlpha c || isSpace c)
