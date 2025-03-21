@@ -1,5 +1,6 @@
 module Main where
 
+import Analyzer (getProcentString)
 import Data.Char (isAlpha, isSpace)
 import Data.List (isPrefixOf)
 
@@ -60,6 +61,17 @@ filterSpamByLinks mx t = itSpam mx 0 $ words t
       | count >= m = True
       | isLink x = itSpam m (count + 1) xs
       | otherwise = itSpam m count xs
+
+filterSpamByIdentition :: String -> String -> Integer -> Bool
+filterSpamByIdentition mf ms c
+  | c == 0 = False
+  | mf == "" || ms == "" = False
+  | otherwise = x
+  where
+    d = getProcentString mf ms
+    x
+      | d >= c = True
+      | otherwise = False
 
 main :: IO ()
 main = putStrLn "Hello, Haskell!"

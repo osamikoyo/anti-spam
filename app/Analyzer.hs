@@ -1,4 +1,7 @@
-module Analyzer where
+module Analyzer
+  ( getProcentString,
+  )
+where
 
 setToLenght :: String -> Int -> String
 setToLenght text l = text ++ p "" l
